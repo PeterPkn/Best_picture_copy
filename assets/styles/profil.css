@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    height: 50px;
+    background: #5B5FE3;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+}
+
+.logo{
+    width: 50px;
+    padding: 5px;
+}
+
+.user{
+    width: 26px;
+    float: right;
+    padding: 9px;
+}
+
+header .wrapper{
+    align-items: baseline;
+}
+
+nav {
+    align-content: center;
+    float: right;
+    line-height: 50px;
+    padding-right: 10px ;
+}
+nav a {
+    text-decoration: none;
+    font-family: acumin-pro-semi-condensed, sans-serif;
+    font-style: normal;
+    letter-spacing: 4px;
+    font-size: 20px;
+    margin: 0 10px;
+    color: #fff;
+}
+header{
+    top: 0;
+}
+.main{
+    margin-top: 5%;
+}
+
+#h5{
+    font-family: acumin-pro-semi-condensed, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: 4px;
+    padding: 55px 30px 30px 55px;
+    font-size: 40px;
+}
+.acc{
+    font-family: acumin-pro-semi-condensed, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: 4px;
+    padding: 0px 5px 5px 55px;
+    font-size: 20px;
+}
+.profil{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.bo {width: 250px;
+    height: 250px;
+    border-radius:50%;
+}
+.boimg-1 {;
+    object-fit: cover;
+    margin: 10px 10px 20px 75px;
+}
+.bold{
+    font-weight: bold;
+}
+.gallary-links .wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+.gallary-links{
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.gallary-links .gallary-link{
+    float: left;
+    align-self: center;
+    width: 380px;
+    height: 380px;
+    margin: 10px 10px 10px 10px;
+    background-color: #E3E3E3;
+}
+.content-picture{
+    width: 380px;
+    height:380px;
+    object-fit: cover;
+    object-position: 10%
+}
+
+.emails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer{
+    font-family: acumin-pro-semi-condensed, sans-serif;
+    font-style: normal;
+    background-color: #5B5FE3;
+
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+footer p{
+    padding: 5px;
+}
+#contact{
+    font-family: acumin-pro-semi-condensed, sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}
+footer a{
+    font-family: acumin-pro-semi-condensed, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.emails{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+.agbs{
+    float: bottom;
+    padding-left: 84%;
+}
+
+.logofooter{
+    width: 100px;
+    justify-content: center;
+}
+
+.contact{
+    font-size: 20px;
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #5B5FE3, #70C8FA);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'acumin-pro', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.04);
+    height: 34px;
+    width: 100px;
+    text-decoration: none;
+}
+
+
+
+.sign {
+    color: #5B5FE3;
+    font-family: 'acumin-pro', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.un {
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 20px;
+    padding-bottom: 15px;
+    border: none;
+    text-align: center;
+    font-family: 'acumin-pro', sans-serif;
+    width: 300px;
+    height: 50px;
+    margin: 7em auto;
+    margin-top: 40px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.14);
+}
+
+#color {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #5B5FE3;
+    text-decoration: none
+}
+
+
+

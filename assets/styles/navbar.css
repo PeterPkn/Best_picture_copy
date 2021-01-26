@@ -1,0 +1,39 @@
+header {
+    height: 50px;
+    background: #5B5FE3;
+    width: 100%;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+}
+
+.logo{
+    width: 50px;
+    padding: 5px;
+}
+
+.user{
+    width: 26px;
+    float: right;
+    padding: 9px;
+}
+
+.wrapper{
+    align-items: baseline;
+}
+
+nav {
+    align-content: center;
+    float: right;
+    line-height: 50px;
+    padding-right: 10px ;
+}
+nav a {
+    text-decoration: none;
+    font-family: acumin-pro-semi-condensed, sans-serif;
+    font-style: normal;
+    letter-spacing: 3px;
+    font-size: 20px;
+    margin: 0 10px;
+    color: #fff;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BP | AdminPanel</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <style>
+        body {
+            background: url("assets/images/login.jpg") no-repeat;
+            font-family: acumin-pro, sans-serif;
+            background-size: 100%;
+        }
+
+        .main {
+            background-color: #FFFFFF;
+            width: 450px;
+            height: auto;
+            margin: 3em auto;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        }
+
+        .sign {
+            color: #5B5FE3;
+            font-family: 'acumin-pro', sans-serif;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .un {
+            width: 76%;
+            color: rgb(38, 50, 56);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            background: rgba(136, 126, 126, 0.04);
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            border: 2px solid rgba(0, 0, 0, 0.02);
+            margin-left: 46px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'acumin-pro', sans-serif;
+        }
+
+        form.form1 {
+            padding-top: 10px;
+        }
+
+
+        .un:focus, .pass:focus {
+            border: 2px solid rgba(0, 0, 0, 0.18) !important;
+
+        }
+
+        .submit {
+            cursor: pointer;
+            border-radius: 5em;
+            color: #fff;
+            background: linear-gradient(to right, #5B5FE3, #70C8FA);
+            border: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-family: 'acumin-pro', sans-serif;
+            /*margin-left: 35%;*/
+            font-size: 13px;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.04);
+        }
+
+        a {
+            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+            color: #5B5FE3;
+            text-decoration: none
+        }
+
+        @media (max-width: 600px) {
+            .main {
+                border-radius: 0px;
+            }
+        }
+
+        .close {
+            width: 30px;
+            height: 30px;
+            position: relative;
+        }
+        .close:after {
+            content: '';
+            height: 30px;
+            border-left: 2px solid #5B5FE3;
+            position: absolute;
+            transform: rotate(45deg);
+            left: 20px;
+            top:5px;
+        }
+
+        .close:before {
+            content: '';
+            height: 30px;
+            border-left: 2px solid #5B5FE3;
+            position: absolute;
+            transform: rotate(-45deg);
+            left: 20px;
+            top:5px;
+        }
+
+
+        /* The close button */
+        #closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: none;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #photo-to-approve {
+            width: 75%;
+            padding-left: 12.5%;
+        }
+
+        .first {
+            margin-left: 12.5%;
+            width: 37.25%;
+        }
+        .second {
+            margin-left: 0.5%;
+            width: 37.25%;
+        }
+        .but-w {
+            width: 50%;
+            margin-left: 25%;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .m-1 {
+            margin-bottom: 1.5em;
+        }
+
+        .m-2 {
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+<div class="main" id="main">
+    <a href="profil/index.php"> <div class="close"></div></a>
+    <p class="sign" align="center" id="if">Admin Panel</p>
+    <form class="form1">
+        <div class="d-flex m-1">
+            <button id="start-contest" class="submit first">Wettbewerb starten</button>
+            <button id="stop-contest" class="submit second">Wettbewerb beenden</button>
+
+        </div>
+
+        <div class="d-flex m-2">
+            <button id="approve-photo" class="submit first">Annehmen</button>
+            <button id="unapprove-photo" class="submit second">Ablehnen (Und löschen)</button>
+        </div>
+
+        <img id="photo-to-approve" class="m-1" src="http://via.placeholder.com/200x200">
+
+        <input class="un" type="text" align="center" placeholder="User ID" id="user-id">
+        <button id="delete-user" class="submit but-w m-1">Löschen</button>
+        <input class="un" type="text" align="center" placeholder="Bild ID" id="photo-id">
+        <button id="delete-photo" class="submit but-w m-1">Löschen</button>
+
+    </form>
+</div>
+
+<script>
+    let btn_start_contest = document.getElementById("start-contest");
+    let btn_stop_contest = document.getElementById("stop-contest");
+    let img_to_approve = document.getElementById("photo-to-approve");
+    let btn_approve = document.getElementById("approve-photo");
+    let btn_unapprove = document.getElementById("unapprove-photo");
+
+    let cur_img;
+
+    let user_id = document.getElementById("user-id");
+    let btn_delete_user = document.getElementById("delete-user");
+    let photo_id = document.getElementById("photo-id");
+    let btn_delete_photo = document.getElementById("delete-photo");
+
+    btn_start_contest.addEventListener("click", function () {
+        let req = new XMLHttpRequest();
+        req.addEventListener("load", function (){
+            console.log(JSON.parse(this.responseText))
+        });
+        req.open("get", "php/endpoints/adminpanel.php?action=start_contest");
+        req.send();
+    })
+    btn_stop_contest.addEventListener("click", function () {
+        let req = new XMLHttpRequest();
+        req.addEventListener("load", function (){
+            console.log(JSON.parse(this.responseText))
+        });
+        req.open("get", "php/endpoints/adminpanel.php?action=stop_contest");
+        req.send();
+    })
+
+    btn_delete_user.addEventListener("click", function () {
+        let req = new XMLHttpRequest();
+        req.addEventListener("load", function (){
+            console.log(JSON.parse(this.responseText))
+        });
+        req.open("get", "php/endpoints/adminpanel.php?action=delete_user&userid=" + user_id.value);
+        req.send();
+    })
+
+    btn_delete_photo.addEventListener("click", function () {
+        let req = new XMLHttpRequest();
+        req.addEventListener("load", function (){
+            console.log(JSON.parse(this.responseText))
+        });
+        req.open("get", "php/endpoints/adminpanel.php?action=delete_photo&photoid=" + photo_id.value);
+        req.send();
+    })
+
+    btn_unapprove.addEventListener("click", function () {
+        let req = new XMLHttpRequest();
+        req.addEventListener("load", function (){
+            let json = JSON.parse(this.responseText);
+            console.log(json);
+            if (json.success) {
+                cur_img = null;
+                img_to_approve.src="http://via.placeholder.com/200x200";
+                request_photo(update_preview);
+            }
+        });
+        req.open("get", "php/endpoints/adminpanel.php?action=delete_photo&photoid=" + cur_img.photo_id);
+        req.send();
+    })
+
+    btn_approve.addEventListener("click", function () {
+        if (cur_img !== null) {
+            let req = new XMLHttpRequest();
+            req.addEventListener("load", function (){
+                let json = JSON.parse(this.responseText);
+                console.log(json);
+                if (json.success) {
+                    cur_img = null;
+                    img_to_approve.src="http://via.placeholder.com/200x200";
+                    request_photo(update_preview);
+                }
+            });
+            req.open("get", "php/endpoints/adminpanel.php?action=approve_photo&photoid=" + cur_img.photo_id);
+            req.send();
+        }
+    })
+
+    function request_photo(f) {
+        let req = new XMLHttpRequest();
+        req.addEventListener("load", f);
+        req.open("get", "php/endpoints/adminpanel.php?action=get_unapproved_photo");
+        req.send();
+    }
+
+    function update_preview() {
+        let json = JSON.parse(this.responseText);
+        if (json.success) {
+            cur_img = json;
+            img_to_approve.src = json.path;
+        }
+    }
+
+    request_photo(update_preview);
+</script>
+
+</body>
+</html>

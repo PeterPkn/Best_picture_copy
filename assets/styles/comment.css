@@ -1,0 +1,154 @@
+*{
+    font-family: acumin-pro-semi-condensed, sans-serif;
+    font-style: normal;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+body > section, #nebeneinander, #kommentar > div > div {
+    display: flex;
+}
+
+section {
+    font-weight: 600;
+}
+
+#nebeneinander {
+    margin-bottom: 20px;
+}
+
+#nebeneinander > div:first-child {
+    align-self: center;
+    width: 37vw;
+}
+
+#nebeneinander > div > div:first-child, #nebeneinander > div > div:nth-child(2), #section_right > article > h1 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#nebeneinander > div > div:nth-child(3) {
+    font-style: italic;
+}
+
+#lesezeichen, #lesezeichen_left, .co {
+    display: flex;
+    width: 44vw;
+}
+
+#lesezeichen img {
+    height: 30px;
+    vertical-align: middle;
+}
+
+#lesezeichen_left > div {
+    margin-left: 0.7vw;
+    font-size: 25px;
+    font-weight: 50;
+    align-self: center;
+    justify-content: center;
+    vertical-align: top;
+}
+
+#upload {
+    width: 44vw;
+    height: 60vh;
+    object-fit: contain;
+}
+
+#section_left {
+    margin: 90px 2% 2% 7.5%;
+}
+
+#section_right {
+    margin: 90px 7.5% 2% 2%;
+    width: 35vw;
+}
+
+#section_right > article:last-child > p {
+    font-weight: 100;
+    font-style: italic;
+}
+
+#profilbild {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 120px;
+    width: 120px;
+}
+
+#kommentar {
+    border: 2px solid lightgray;
+    margin-top: 15px;
+}
+
+#kommentar > div, #kommentar > h3, .co > input {
+    padding-left: 4px;
+}
+
+#kommentar > h3 {
+    color: #5887FA;
+}
+
+#kommentar > div > div > div:first-child {
+    margin-right: 5px;
+}
+
+#kommentar > div > div > div:last-child, .co > input::placeholder {
+    font-weight: 100;
+    font-style: italic;
+}
+
+.co {
+    border-top: 2px solid lightgray;
+}
+
+#submit {
+    color: #54ABF0;
+    font-style: normal;
+    font-size: medium;
+    border: none;
+    background: none;
+    padding-right: 4px;
+}
+
+#text {
+    border: none;
+    font-size: medium;
+    width: 44vw;
+}
+.co > input::placeholder {
+    color: darkgray;
+}
+.co > input:focus {
+    outline: none;
+}
+
+#text {
+    font-weight: normal;
+}
+
+/* Scrollbar */
+.myBox {
+    overflow-y: scroll;
+    height: 71px;
+}
+
+footer * {
+    line-height: normal;
+}
+
+#submit:hover {
+    color: #5887FA;
+    cursor: pointer;
+}
+
+#heart:hover {
+    cursor: pointer;
+}
+
+footer{
+    bottom: 0;
+    float: bottom;
+}
